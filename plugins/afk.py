@@ -59,8 +59,8 @@ async def set_afk(client, message):
             client,
             engine.get_string("AFK_2").format("Not Specified.")
         )
-        await pablo.edit(msg)
-    await go_afk(afk_start)
+        await go_afk(afk_start)
+    await pablo.edit(msg)
 
 
 @listen(
