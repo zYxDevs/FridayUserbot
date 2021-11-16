@@ -197,14 +197,14 @@ async def haste_bin(client, message):
         else:
             message_s = message.reply_to_message.text
 
-    link = "https://hastebin.com/documents"
+    link = "https://www.toptal.com/developers/hastebin/documents"
 
     async with aiohttp.ClientSession() as session:
         req = await session.post(link, data=message_s)
         resp = await req.json()
     key = resp.get("key")
-    url = f"https://hastebin.com/{key}"
-    raw = f"https://hastebin.com/raw/{key}"
+    url = f"https://www.toptal.com/developers/hastebin/{key}"
+    raw = f"https://www.toptal.com/developers/hastebin/raw/{key}"
 
     output = f"**Pasted to Hastebin**\n**Link:** [Hastebin]({url})\n**Raw Link:** [Raw]({raw})"
     await pablo.edit(output, disable_web_page_preview=True)
