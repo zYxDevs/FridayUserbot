@@ -7,10 +7,8 @@
 # All rights reserved.
 
 FROM python:3.9
-WORKDIR .
+WORKDIR /app
 ENV PYTHONUNBUFFERED=1
-COPY requirements.txt .
-COPY startup.sh .
-RUN bash startup.sh
 COPY . .
-CMD ["python3", "-m", "main_startup"]
+RUN bash startup.sh
+ENTRYPOINT ["python3", "-m", "main_startup"]

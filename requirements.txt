@@ -1,4 +1,4 @@
-pyrogram
+Pyrogram==1.2.12
 filesplit
 google-trans-new
 wget>=3.2

@@ -396,15 +396,15 @@ async def ujwal_demote(client, message):
         await client.promote_chat_member(
             message.chat.id,
             user.id,
-            is_anonymous=None,
-            can_change_info=None,
-            can_post_messages=None,
-            can_edit_messages=None,
-            can_delete_messages=None,
-            can_restrict_members=None,
-            can_invite_users=None,
-            can_pin_messages=None,
-            can_promote_members=None,
+            is_anonymous=False,
+            can_change_info=False,
+            can_post_messages=False,
+            can_edit_messages=False,
+            can_delete_messages=False,
+            can_restrict_members=False,
+            can_invite_users=False,
+            can_pin_messages=False,
+            can_promote_members=False,
         )
     except BaseException as e:
         await pablo.edit(engine.get_string("FAILED_ADMIN_ACTION").format("Demote", e))
